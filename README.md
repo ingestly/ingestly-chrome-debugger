@@ -5,7 +5,9 @@
 - In Console tab of Chrome's developer tool, the extension shows a table of payload sent to Ingestly Endpoint.
 - You can toggle on/off the extention through Chrome's Extention page.
 
-## 
+![Screenshot](./screenshot.png)
+
+## Install
 1. Clone or Download this repository.
 2. Open Chrome's extension page
 3. Enable "Developer Mode"
