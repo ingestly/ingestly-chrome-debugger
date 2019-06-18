@@ -3,7 +3,7 @@
 ## What is this?
 - A Chrome Extension for debugging Ingestly web beacons.
 - In Console tab of Chrome's developer tool, the extension shows a table of payload sent to Ingestly Endpoint.
-- You can toggle on/off the extention through Chrome's Extention page.
+- You can toggle on/off the extension through Chrome's Extension page.
 
 ![Screenshot](./screenshot.png)
 
