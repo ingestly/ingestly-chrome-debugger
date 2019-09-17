@@ -1,20 +1,28 @@
 {
   "manifest_version": 2,
-  "name": "Ingestly Debugger",
+  "name": "Ingestly",
   "version": "0.1.0",
-  "icons": {
-    "128": "icon.png"
-  },
   "permissions": [
     "*://*/*/",
     "webRequest",
+    "storage",
     "tabs"
   ],
+  "icons": {
+    "128": "resources/icon.png"
+  },
+  "browser_action": {
+    "default_popup": "resources/popup.html"
+  },
   "background": {
     "scripts": [
-      "background.js"
+      "background/debugger.js",
+      "background/visualizer.js"
     ]
   },
+  "web_accessible_resources": [
+    "resources/mapping.json"
+  ],
   "content_scripts": [
     {
       "matches": [

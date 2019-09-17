@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+<header><h1>Ingestly</h1></header>
+<main>
+    <form name="settings">
+        <div>
+            <h2>Settings</h2>
+            <table>
+                <tr>
+                    <th>API Endpoint</th>
+                    <td><input type="text" id="visualizer_endpoint" name="visualizer_endpoint"
+                               placeholder="http://localhost/" class="text-box"/></td>
+                </tr>
+                <tr>
+                    <th>API Key</th>
+                    <td><input type="text" id="visualizer_key" name="visualizer_key" placeholder="abc123"
+                               class="text-box"/></td>
+                </tr>
+                <tr>
+                    <th>Article Element</th>
+                    <td><input type="text" id="visualizer_target" name="visualizer_target" placeholder="#article"
+                               class="text-box"/></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input type="reset" id="reset" name="reset" value="Reset" class="button button-gray"/>
+                        <input type="submit" id="save" name="save" value="Save" class="button button-purple"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <form name="visualizer">
+        <div>
+            <h2>Visualizer</h2>
+            <table>
+                <tr>
+                    <th>Date Time From</th>
+                    <td><input type="date" id="date_from" name="date_from" class="text-box"/></td>
+                </tr>
+                <tr>
+                    <th>Date Time To</th>
+                    <td><input type="date" id="date_to" name="date_to" class="text-box"/></td>
+                </tr>
+                <tr>
+                    <th>Custom Filter</th>
+                    <td><input type="text" id="custom_filter" name="custom_filter" class="text-box"/></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input type="submit" id="visualize" name="visualize" value="Visualize" class="button button-purple"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</main>
+<script src="popup.js"></script>
+</body>
+</html>
