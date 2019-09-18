@@ -1,3 +1,5 @@
+const now = new Date();
+const today = `${(now.getFullYear())}-${('00' + (now.getMonth() + 1)).slice(-2)}-${(now.getDate())}`;
 let config = {}, queryCondition = {};
 
 // Restore the configs.
@@ -26,7 +28,15 @@ chrome.tabs.query({
                 console.log(e);
             }
             for (const item in queryCondition) {
-                document.getElementById(item).value = queryCondition[item];
+                if (document.getElementById(item).type === 'checkbox') {
+                    document.getElementById(item).checked = queryCondition[item];
+                } else {
+                    if ((item === 'date_from' || item === 'date_to') && queryCondition[item] === '') {
+                        document.getElementById(item).value = today;
+                    } else {
+                        document.getElementById(item).value = queryCondition[item];
+                    }
+                }
             }
         });
     } catch (e) {
@@ -66,9 +76,10 @@ document.getElementById('visualize').addEventListener('click', (event) => {
         apiEndpoint: document.settings.visualizer_endpoint.value || config.visualizer_endpoint || 'http://localhost/',
         apiKey: document.settings.visualizer_key.value || config.visualizer_key || 'abc123',
         targetSelector: document.settings.visualizer_target.value || config.visualizer_target || '#article',
-        date_from: document.visualizer.date_from.value || queryCondition.date_from || '2019-01-01',
-        date_to: document.visualizer.date_to.value || queryCondition.date_to || '2019-12-31',
-        custom_filter: document.visualizer.custom_filter.value || queryCondition.custom_filter || ''
+        date_from: document.visualizer.date_from.value || queryCondition.date_from || today,
+        date_to: document.visualizer.date_to.value || queryCondition.date_to || today,
+        custom_filter: document.visualizer.custom_filter.value || queryCondition.custom_filter || '',
+        realtime: document.visualizer.realtime.checked || queryCondition.realtime || false,
     });
     event.preventDefault();
     window.close();
@@ -80,7 +91,8 @@ document.visualizer.addEventListener('change', (e) => {
         queryCondition: JSON.stringify({
             date_from: document.visualizer.date_from.value,
             date_to: document.visualizer.date_to.value,
-            custom_filter: document.visualizer.custom_filter.value
+            custom_filter: document.visualizer.custom_filter.value,
+            realtime: document.visualizer.realtime.checked
         })
     });
 });

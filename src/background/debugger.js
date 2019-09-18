@@ -30,7 +30,10 @@ const observeNetwork = () => {
                 try {
                     chrome.tabs.sendMessage(
                         item.tabId,
-                        formatResult(item.url)
+                        {
+                            type: 'debugger',
+                            body: formatResult(item.url)
+                        }
                     );
                 } catch (e) {
                     console.log(e);
