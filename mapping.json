@@ -4,6 +4,7 @@
   "action": "action",
   "category": "category",
   "ingestlyId": "ingestly_id",
+  "sesId": "session_id",
   "rootId": "root_id",
   "sinceInitMs": "since_init_ms",
   "sincePrevMs": "since_prev_ms",
