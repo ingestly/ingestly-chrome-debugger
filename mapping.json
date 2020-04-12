@@ -1,8 +1,10 @@
 {
-  "sdk": "__n/a__",
-  "key": "__n/a__",
+  "sdk": "sdk_version",
+  "key": "sdk_api_key",
   "action": "action",
   "category": "category",
+  "ck": "cookie",
+  "consent": "consent",
   "ingestlyId": "ingestly_id",
   "sesId": "session_id",
   "rootId": "root_id",
